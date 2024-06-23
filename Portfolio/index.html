@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubassira Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(156, 184, 216);
+            color: black;
+            font-family: "Poppins", sans-serif;
+        }
+
+        section {
+            min-height: 90vh;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            width: 100%;
+            padding: 1.5rem 0;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(35, 69, 111);
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #e0e1ec;
+        }
+
+        nav ul li a:hover {
+            transform: none;
+            color: rgb(169, 27, 27);
+            cursor: pointer;
+            font-size: 1.16rem;
+        }
+
+        /*main hr {
+            border: 0;
+            background-color: rgb(2, 2, 120);
+            height: 1.35px;
+            margin: 35px 84px;
+        }*/
+
+        .left {
+            font-size: 1.8rem;
+            color: #e0e1ec;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .firstsection>div {
+            width: 35%;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+        }
+
+        .rightsection img {
+            width: 70%;
+            margin: 174px 0;
+            animation: floatImage 4s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-2.4rem);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .purple {
+            color: rgb(125, 1, 69);
+        }
+
+        #element {
+            color: rgb(125, 1, 69);
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            background: transparent;
+            border: .15rem solid #1a42af;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: #001755;
+            margin: 2rem .8rem 1.5rem 0;
+            transition: .5s ease;
+        }
+
+        .social-media a:hover {
+            background: #5982F4;
+            color: #262840;
+            box-shadow: 0 0 1rem #1a42af;
+        }
+
+        .btn {
+            text-decoration: none;
+            display: inline-block;
+            padding: .6rem 1.2rem;
+            background: #1a2a54;
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem #5982F4;
+            font-size: 1.6rem;
+            color: rgb(156, 184, 216);
+            letter-spacing: .1rem;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            box-shadow: none;
+        }
+
+        /*.secondsection {
+            max-width: 80vw;
+            margin: auto;
+        }*/
+        .about {
+            padding: 0 10% 2% 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            background: rgb(52, 106, 167);
+        }
+
+        .about-img img {
+            width: 25vw;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 3.5rem;
+        }
+
+        .about-content h4 {
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .about-content h5 {
+            font-size: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .education .heading {
+            margin-top: 2rem;
+            color: #02094b;
+        }
+
+        .education .timeline {
+            position: relative;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .education .timeline::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            background: #020133;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: 50%;
+        }
+
+        .education .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .education .container::after {
+            content: "\f0b1";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: rgb(255, 255, 255);
+            border: 4px solid #714a2c;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 100;
+            font-size: 1.89rem;
+            text-align: center;
+            font-weight: 600;
+            color: #02094b;
+            font-family: "Font Awesome\5 free";
+        }
+
+        .education .left {
+            left: 0;
+        }
+
+        .education .right {
+            left: 50%;
+        }
+
+        .education .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #6b4e2a;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #754f22 transparent transparent;
+        }
+
+        .education .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 31px;
+            border: medium solid #6b4e2a;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #754f22 transparent transparent;
+        }
+
+        .education .right::after {
+            left: -16px;
+        }
+
+        .education .container.right .content {
+            color: rgb(255, 255, 255);
+        }
+
+        .education .content {
+            background-color: #7c5627;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .education .content .tag {
+            font-size: 1.3rem;
+            padding-top: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .education .content .desc {
+            margin-left: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .education .content .desc h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .education .desc p {
+            font-size: 1.3rem;
+            margin: 5px 0 0 20px;
+        }
+
+        .skills {
+            padding: 30px 0;
+            margin-top: 4rem;
+            text-align: center;
+            background-color: #e7abab;
+        }
+
+        .skills .heading {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: #030202;
+        }
+
+        .skills .heading span {
+            color: #84052b;
+        }
+
+        /* Container for skills */
+        .skills .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12rem;
+        }
+
+        /* Individual skill info box */
+        .info {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(90, 10, 10, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid purple;
+        }
+
+        .info img {
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+        }
+
+        .info span {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Hover effect */
+        .info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .projects {
+            min-height: 250vh;
+        }
+
+        .left-img img {
+            width: 35vw;
+            margin-top: 2rem;
+            border: 2px solid black;
+        }
+
+        .project {
+            padding: 0 7% 2% 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .project .heading {
+            font-size: 2.3rem;
+            margin-top: 2rem;
+        }
+
+        .content h4 {
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .content h5 {
+            font-size: 1.2rem;
+            color: rgb(93, 91, 91);
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin: ;
+        }
+
+        .contact {
+            min-height: 80vh;
+            padding: 2rem;
+            background-color: #503398;
+            color: white;
+        }
+
+        .contact .heading {
+            font-size: 3.7rem;
+        }
+
+        .contact .container {
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact li {
+            margin: 1.2rem 0 1.2rem 2rem;
+        }
+
+        footer {
+            min-height: auto;
+            padding-top: 0;
+            background: rgb(0, 1, 43);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        footer .container .box {
+            flex: 1 1 25rem;
+            margin: 3rem;
+        }
+
+        footer .container .box h3 {
+            font-size: 2rem;
+            color: #fff;
+            padding-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        footer .container .box p {
+            font-size: 1rem;
+            color: #ccc;
+            padding: .7rem 0;
+            text-transform: none;
+        }
+
+        footer .container .box a:hover {
+            color: #ffae00;
+        }
+
+        footer .credit {
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-family: "Nunito", sans-serif;
+            font-weight: 600;
+            color: gray;
+            border-top: .1rem solid #fff3;
+        }
+
+        footer li {
+            list-style: none;
+            margin: 0 0 0 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                Mubassira's Portfolio
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hii, Myself <span class="purple">Mubassira Gogli</span>
+                <div>and I am a passionate </div>
+                <span id="element"></span>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/unicorngirl__03/#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/mubassira-gogli-5081ab272" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Mubassira63/practice.git" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="Mubassira's __Resume.pdf" class="btn" target="_blank">My Resume</a>
+            </div>
+            <div class="rightsection">
+                <img src="my1.png">
+            </div>
+        </section>
+
+        <!--
+       <section class="secondsection">
+            <h1>Education</h1>
+        </section> -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="my2.png" alt="">
+            </div>
+            <div class="about-content">
+                <h4 class="heading">ABOUT <span class="purple">ME</span></h4>
+                <h5>Web Developer</h5>
+                <p>
+                    I'm Mubassira, an enthusiastic and budding web developer with a deep passion for creating
+                    interactive and user-friendly web experiences. Though I'm at the start of my professional
+                    journey, my love for web development and continuous learning drive me to explore and innovate.
+                    During my studies, I gained hands-on experience with HTML, CSS, JavaScript, and
+                    frameworks.Driven by my passion for technology and design, I enjoy creating clean, efficient
+                    code and intuitive user experiences. Throughout my studies, I worked on several projects that
+                    sharpened my problem-solving skills and attention to detail.I'm excited to contribute to
+                    innovative projects and collaborate with talented teams. Let's connect and explore how we can
+                    build something amazing together!
+                </p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </section>
+        <!-- Education Section Design -->
+        <section class="education" id="education">
+            <h5 class="heading">Education</h4>
+                <div class="timeline">
+                    <div class="container left">
+                        <div class="content">
+                            <div class="tag">
+                                <h3> Bachelor of Engineering</h3>
+                            </div>
+                            <div class="desc">
+                                <p> At Shri S'ad Vidya Mandal Institute of Technology,Bharuch.<br>
+                                    Branch: Computer Science Engineering, <br>
+                                    Year:2021 - present, <br>
+                                    Current CPI: 8.96 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right">
+                        <div class="content">
+                            <div class="tag">
+                                <h3> HSC Board</h3>
+                            </div>
+                            <div class="desc">
+                                <p> At The Valan High School, Valan.<br>
+                                    Feild:Science, <br>
+                                    Year:2018 - 2020, <br>
+                                    Percentage: 80% </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container left">
+                        <div class="content">
+                            <div class="tag">
+                                <h3> SSC Board</h3>
+                            </div>
+                            <div class="desc">
+                                <p> At The Valan High School, Valan.<br>
+                                    Year:2017 - 2018, <br>
+                                    Percentage: 87% </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Skills Section Design -->
+        <section class="skills" id="skills">
+            <h2 class="heading"><span>My</span> Skills</h2>
+            <div class="container">
+                <div class="info">
+                    <img src="JS.jpg" alt="HTML, CSS, JavaScript" height="100" width="100">
+                    <span>HTML, CSS, JavaScript</span>
+                </div>
+                <div class="info">
+                    <img src="php.jpg" alt="PHP" height="100" width="100">
+                    <span>PHP</span>
+                </div>
+                <div class="info">
+                    <img src="Java.jpg" alt="Java" height="100" width="100">
+                    <span>Java</span>
+                </div>
+                <div class="info">
+                    <img src="Photoshop.jpg" alt="Adobe Photoshop" height="100" width="100">
+                    <span>Adobe Photoshop</span>
+                </div>
+                <div class="info">
+                    <img src="communication.jpg" alt="Communication" height="100" width="100">
+                    <span>Communication</span>
+                </div>
+                <div class="info">
+                    <img src="aws.jpg" alt="AWS Cloud" height="100" width="100">
+                    <span>AWS Cloud</span>
+                </div>
+                <div class="info">
+                    <img src="C.jpg" alt="C, C++" height="100" width="100">
+                    <span>C, C++</span>
+                </div>
+                <div class="info">
+                    <img src="Datascience.jpg" alt="Data Science with Python" height="100" width="100">
+                    <span>Data Science with Python</span>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section Design -->
+        <section class="projects" id="projects">
+            <h2 class="heading">Projects</h2>
+            <div class="project">
+                <div class="left-img">
+                    <img src="1st_P.png" alt="">
+                </div>
+                <div class="content">
+                    <h4 class="heading">Grocery Store</h4>
+                    <h5>10/2023 - 01/2024</h5>
+                    <p>I created Grocery Store Website, an easy-to-use online platform for grocery shopping. The website
+                        helps users quickly find and buy groceries with a clean and simple interface. We can easily
+                        create and manage shopping lists, get personalized product suggestions, and choose from flexible
+                        delivery options like home delivery or in-store pickup. I made sure to include secure payment
+                        methods and
+                        offer special discounts to make shopping convenient and safe.For the technology, I used HTML,
+                        CSS and jav-script for the frontend, php for the backend, and MySQL to manage data.</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="content">
+                    <h4 class="heading">Smart Security Control panel for Collage Campus</h4>
+                    <h5> (08/2023 - Present) </h5>
+                    <p>We are Four members of group building this project. This project provides security, authenticity
+                        and
+                        confidentiality to particular premises regarding their visitors or employees. This project
+                        builds using Raspberry Pi based and work with OpenCV library for facial recognition to provide
+                        complete
+                        authentication. Also we opens premises's gate using Raspberry Pi's GPIO library. </p>
+                </div>
+                <div class="left-img">
+                    <img src="2nd_P.png" alt="">
+                </div>
+            </div>
+            <div class="project">
+                <div class="left-img">
+                    <img src="3rd_P.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4 class="heading">Smart Policing Using AI and facial recognition</h4>
+                    <h5> (11/2023 - 11/2023) </h5>
+                    <p>We are six members of group build this project in one day event. This project includes in New
+                        India Vibrant Hackathon 2023(software Edition). The project was completed in one day internal
+                        Hackathon at SVMIT, Bharuch. This project provides security among criminals. And identify
+                        criminal activities where they are present in such premises.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section Design -->
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact Me</h2>
+            <div class="container">
+                <h3>Contact Me through the following my details:</h3>
+                <p>
+                    <li> Contact Number: (+91) 8347887162 </li>
+                    <li>Email ID: mubassirapatel8347@.gmail.com</li>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="box">
+                <h3> Mubassira's Portfolio</h3>
+                <p> Thank You for visiting my personal portfolio website.<br> Contact with me over socials.</p>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-chevron-circle-right"></i> About</a></li>
+                <li><a href="#education"><i class="fas fa-chevron-circle-right"></i> Education</a></li>
+                <li><a href="#skills"><i class="fas fa-chevron-circle-right"></i> MySkills</a></li>
+                <li><a href="#projects"><i class="fas fa-chevron-circle-right"></i> Projects</a></li>
+            </div>
+            <div class="box">
+                <h3> Contact Info </h3>
+                <p><i class="fa fa-phone"></i> (+91) 8347887162</p>
+                <p><i class="fa fa-envelope"></i> patelmubassira8347@gmail.com</p>
+                <p><i class="fa fa-map-marker"></i> Valan,Vadodara, Gujarat</p>
+            </div>
+        </div>
+        <h2 class="credit">Designed and Developed by Mubassira. Copyright &#169; mubassirasportfolio.com | All right
+            reserved </h2>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Web Designer', 'Video Editor',],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
